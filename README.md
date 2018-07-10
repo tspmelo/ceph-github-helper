@@ -1,6 +1,7 @@
 # ceph github helper
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/ikpfebikkeabmdnccbimlomheocpgkmn.svg?style=flat-square)](https://chrome.google.com/webstore/detail/ceph-github-helper/ikpfebikkeabmdnccbimlomheocpgkmn)
+[![Mozilla Add-on](https://img.shields.io/amo/v/ceph-github-helper.svg?style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/ceph-github-helper/)
 
 ## Install
 
@@ -22,7 +23,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Environment
 
-The build tool also defines a variable named `process.env.NODE_ENV` in your scripts. 
+The build tool also defines a variable named `process.env.NODE_ENV` in your scripts.
 
 ## Docs
 
