@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "ceph github helper",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "ceph gh",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "This extension will add some buttons after the comments in any ceph github pull request page.",
+    "description": "The description of the application, max 132 chars"
+  },
+  "browserActionTitle": {
+    "message": "ceph github helper",
+    "description": "The title of the browser action button"
+  }
+}
