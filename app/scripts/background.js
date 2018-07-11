@@ -1,7 +1,14 @@
-browser.runtime.onInstalled.addListener((details) => {
-  console.log('previousVersion', details.previousVersion)
-})
+let timeout = undefined;
+const events = ['onCompleted', 'onHistoryStateUpdated'];
+const hostFilter = {
+  url: [{ urlContains: 'https://github.com/ceph/ceph/pull/' }]
+};
 
-browser.tabs.onUpdated.addListener(async (tabId) => {
-  // browser.pageAction.show(tabId)
-})
+events.forEach((event) => {
+  browser.webNavigation[event].addListener(function(data) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      chrome.tabs.sendMessage(data.tabId, data.url);
+    }, 1000);
+  }, hostFilter);
+});

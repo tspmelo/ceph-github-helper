@@ -2,9 +2,14 @@ import * as $ from 'jquery';
 
 let githubmap = {};
 
+browser.runtime.onMessage.addListener(() => {
+  appendHtml();
+});
+
 function appendHtml() {
-  $('#partial-pull-merging').append(
-    '<div class="timeline-comment-wrapper js-comment-container"> \
+  if ($('#cgh').length == 0) {
+    $('#partial-pull-merging').append(
+      '<div class="timeline-comment-wrapper js-comment-container" id="cgh"> \
       <div class="avatar-parent-child timeline-comment-avatar"> \
         <img class="avatar rounded-1" \
             height="44" \
@@ -40,11 +45,12 @@ function appendHtml() {
         </div> \
       </div> \
       </div>'
-  );
+    );
 
-  $('#cgh-reviewed').click(insertReviewedBy);
+    $('#cgh-reviewed').click(insertReviewedBy);
 
-  $('#cgh-retest').click(insertRetest);
+    $('#cgh-retest').click(insertRetest);
+  }
 }
 
 function insertRetest() {
@@ -112,7 +118,3 @@ function prepareParticipants() {
 
   return participantsText;
 }
-
-$(document).ready(() => {
-  appendHtml();
-});
