@@ -6,8 +6,42 @@ browser.runtime.onMessage.addListener(() => {
   appendHtml();
 });
 
+const jenkins_commands = {
+  'ceph dashboard tests': 'jenkins test dashboard',
+  'Docs: build check': 'jenkins test docs',
+  'Signed-off-by': '',
+  'Unmodified Submodules': '',
+  'make check': 'jenkins test make check',
+  'make check (arm64)': 'jenkins test make check arm64'
+};
+
 function appendHtml() {
   if ($('#cgh').length == 0) {
+    $('.merge-status-item.d-flex.flex-items-baseline').each(function(i) {
+      const merge_status = $(this)
+        .find('.text-emphasized')
+        .text()
+        .trim();
+
+      if (!!jenkins_commands[merge_status]) {
+        $(this).append(
+          '<div class="d-flex col-1 ml-2"> \
+            <button class="btn btn-sm status-actions cgh-btn" title="Retest"> \
+              <svg class="octicon octicon-sync" viewBox="0 0 12 16" version="1.1" width="16" height="16"> \
+                <path fill-rule="evenodd" d="M10.24 7.4a4.15 4.15 0 0 1-1.2 3.6 4.346 4.346 0 0 1-5.41.54L4.8 10.4.5 9.8l.6 4.2 1.31-1.26c2.36 1.74 5.7 1.57 7.84-.54a5.876 5.876 0 0 0 1.74-4.46l-1.75-.34zM2.96 5a4.346 4.346 0 0 1 5.41-.54L7.2 5.6l4.3.6-.6-4.2-1.31 1.26c-2.36-1.74-5.7-1.57-7.85.54C.5 5.03-.06 6.65.01 8.26l1.75.35A4.17 4.17 0 0 1 2.96 5z"></path> \
+              </svg> \
+            </button> \
+          </div>'
+        );
+      }
+
+      $(this)
+        .find('button.cgh-btn')
+        .click(function() {
+          $('#new_comment_field').val(jenkins_commands[merge_status]);
+        });
+    });
+
     $('#partial-pull-merging').append(
       '<div class="timeline-comment-wrapper js-comment-container" id="cgh"> \
       <div class="avatar-parent-child timeline-comment-avatar"> \
