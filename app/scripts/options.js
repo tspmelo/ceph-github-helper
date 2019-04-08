@@ -1,4 +1,5 @@
-import * as $ from 'jquery';
+import * as $ from 'jquery/dist/jquery.slim.js';
+
 let reviewers = '';
 browser.storage.local.get('cgh-reviewers').then((item) => {
   let reviewers = item['cgh-reviewers'] || '';

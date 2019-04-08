@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import * as $ from 'jquery/dist/jquery.slim.js';
 
 let githubmap = {};
 
