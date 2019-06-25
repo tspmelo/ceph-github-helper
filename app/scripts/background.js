@@ -1,5 +1,5 @@
 let timeout = undefined;
-const events = ['onCompleted', 'onHistoryStateUpdated'];
+const events = ['onCompleted', 'onHistoryStateUpdated', 'onDOMContentLoaded'];
 const hostFilter = {
   url: [{ urlContains: 'https://github.com/ceph/ceph/pull/' }]
 };
