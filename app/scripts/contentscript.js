@@ -112,7 +112,10 @@ function getGithubmap() {
 
     var oReq = new XMLHttpRequest();
     oReq.addEventListener('load', reqListener);
-    oReq.open('GET', 'https://raw.githubusercontent.com/ceph/ceph/master/.githubmap');
+    oReq.open(
+      'GET',
+      'https://raw.githubusercontent.com/ceph/ceph/master/.githubmap'
+    );
     oReq.send();
   });
 }

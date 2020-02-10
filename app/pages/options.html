@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Options</title>
+    <link rel="stylesheet" type="text/css" href="../styles/options.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Options</title>
-  <link rel="stylesheet"
-        type="text/css"
-        href="../styles/options.css">
-</head>
+  <body>
+    <label>
+      Other reviewers:
+      <br />
+      <code
+        >Each line should have the following format: 'USERNAME NAME SURNAME
+        &lt;EMAIL@ADDRESS.COM&gt;'</code
+      >
+    </label>
+    <textarea id="cgh-reviewers" rows="4" cols="50"> </textarea>
 
-<body>
+    <button id="cgh-save">Save</button>
 
-  <label>
-    Other reviewers:
-    <br>
-    <code>Each line should have the following format: 'USERNAME NAME SURNAME &lt;EMAIL@ADDRESS.COM&gt;'</code>
-  </label>
-  <textarea id="cgh-reviewers"
-            rows="4"
-            cols="50">
-  </textarea>
-
-  <button id="cgh-save">Save</button>
-
-  <script src="../scripts/options.js"></script>
-</body>
-
+    <script src="../scripts/options.js"></script>
+  </body>
 </html>

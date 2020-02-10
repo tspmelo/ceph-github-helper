@@ -4,9 +4,12 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "scripts": {
     "dev": "webextension-toolbox dev",
-    "build": "webextension-toolbox build"
+    "build": "webextension-toolbox build",
+    "lint": "prettier --list-different \"app/**/*.{ts,scss,html}\"",
+    "fix": "prettier --write \"app/**/*.{ts,scss,html}\""
   },
   "devDependencies": {
+    "prettier": "^1.19.1",
     "webextension-toolbox": "^3.0.0"
   },
   "dependencies": {
