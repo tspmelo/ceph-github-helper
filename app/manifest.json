@@ -25,17 +25,27 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://github.com/ceph/ceph**"],
+      "matches": [
+        "https://github.com/ceph/ceph/pull/**",
+        "https://github.com/tspmelo/ceph_test/pull/**"
+      ],
       "js": ["scripts/contentscript.js"],
+      "css": ["styles/contentscript.css"],
       "run_at": "document_end",
       "all_frames": false
     }
+  ],
+  "web_accessible_resources": [
+    "pages/content.html",
+    "styles/contentscript.css",
+    "images/ceph-40.png",
+    "images/jenkins-40.png"
   ],
   "permissions": [
     "storage",
     "https://raw.githubusercontent.com/ceph/ceph/master/*",
     "https://github.com/ceph/ceph/pull/*",
-    "webRequest",
-    "webNavigation"
+    "https://github.com/tspmelo/ceph_test/pull/*",
+    "webRequest"
   ]
 }

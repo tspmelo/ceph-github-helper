@@ -1,0 +1,19 @@
+.ceph-github-helper {
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  z-index: 9999;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  color: green;
+}
+
+.ceph-github-helper .Box-row {
+  padding: 1px;
+}
+
+.ceph-github-helper .Box-header {
+  padding: 1px;
+}

@@ -1,14 +1,11 @@
-let timeout = undefined;
-const events = ['onCompleted', 'onHistoryStateUpdated', 'onDOMContentLoaded'];
-const hostFilter = {
-  url: [{ urlContains: 'https://github.com/ceph/ceph/pull/' }]
-};
-
-events.forEach((event) => {
-  browser.webNavigation[event].addListener(function(data) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      chrome.tabs.sendMessage(data.tabId, data.url);
-    }, 1000);
-  }, hostFilter);
+chrome.runtime.onMessage.addListener(function(request, _sender, sendResponse) {
+  if (request.contentScriptQuery == 'githubmap') {
+    var url =
+      'https://raw.githubusercontent.com/ceph/ceph/master/.githubmap';
+    fetch(url)
+      .then((response) => response.text())
+      .then((map) => sendResponse(map))
+      .catch();
+    return true; // Will respond asynchronously.
+  }
 });
