@@ -26,8 +26,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://github.com/ceph/ceph/pull/**",
-        "https://github.com/tspmelo/ceph_test/pull/**"
+        "https://github.com/ceph/ceph/pull/*"
       ],
       "js": ["scripts/contentscript.js"],
       "css": ["styles/contentscript.css"],
@@ -45,7 +44,6 @@
     "storage",
     "https://raw.githubusercontent.com/ceph/ceph/master/*",
     "https://github.com/ceph/ceph/pull/*",
-    "https://github.com/tspmelo/ceph_test/pull/*",
     "webRequest"
   ]
 }
