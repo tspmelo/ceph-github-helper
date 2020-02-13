@@ -14,10 +14,15 @@ fetch(chrome.extension.getURL('/pages/content.html'))
     $('.cgh-jenkins-cmds .SelectMenu-item').click(insertJenkinsCmd);
     $('.cgh-add-reviewers').click(insertReviewedBy);
     $('.cgh-scroll-down').click(scrollBottom);
+    $('.cgh-main-button').click(toggleVisibility);
   })
   .catch((err) => {
     // handle error
   });
+
+function toggleVisibility() {
+  $('.ceph-github-helper ul').toggle();
+}
 
 function scrollBottom() {
   $('body > div.footer')[0].scrollIntoView();
