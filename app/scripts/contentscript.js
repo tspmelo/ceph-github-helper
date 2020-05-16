@@ -41,9 +41,7 @@ function addImageSrc(selector, image) {
 function insertJenkinsCmd() {
   scrollBottom();
 
-  const cmd = $(this)
-    .text()
-    .trim();
+  const cmd = $(this).text().trim();
 
   $('#new_comment_field').val(cmd);
   $('#partial-new-comment-form-actions [type="submit"].btn-primary').attr(
@@ -83,7 +81,7 @@ function prepareGithubmap(lines) {
       githubmap[found[1]] = {
         user: found[1],
         name: found[2],
-        email: found[3]
+        email: found[3],
       };
     });
 }
@@ -96,9 +94,7 @@ function prepareParticipants() {
   let participantsText = '';
 
   $.map($('.participation img'), (element) => {
-    return $(element)
-      .attr('alt')
-      .replace('@', '');
+    return $(element).attr('alt').replace('@', '');
   })
     .sort()
     .forEach((participant) => {
