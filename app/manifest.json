@@ -8,7 +8,7 @@
   "name": "__MSG_appName__",
   "short_name": "__MSG_appShortName__",
   "description": "__MSG_appDescription__",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "manifest_version": 2,
   "default_locale": "en",
   "icons": {
@@ -25,9 +25,7 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://github.com/ceph/ceph/pull/*"
-      ],
+      "matches": ["https://github.com/ceph/ceph/pull/*"],
       "js": ["scripts/contentscript.js"],
       "css": ["styles/contentscript.css"],
       "run_at": "document_end",
@@ -40,10 +38,5 @@
     "images/ceph-40.png",
     "images/jenkins-40.png"
   ],
-  "permissions": [
-    "storage",
-    "https://raw.githubusercontent.com/ceph/ceph/master/*",
-    "https://github.com/ceph/ceph/pull/*",
-    "webRequest"
-  ]
+  "permissions": ["storage"]
 }

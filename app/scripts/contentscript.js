@@ -64,6 +64,8 @@ async function insertReviewedBy() {
 function getGithubmap() {
   return new Promise((resolve) => {
     chrome.runtime.sendMessage({ contentScriptQuery: 'githubmap' }, (map) => {
+      console.log(map);
+
       browser.storage.local.get('cgh-reviewers').then((item) => {
         let reviewers = item['cgh-reviewers'] || '';
         prepareGithubmap(map + '\n' + reviewers);
@@ -90,7 +92,7 @@ function prepareGithubmap(lines) {
 
 function prepareParticipants() {
   // Get author
-  let author = $('.gh-header-meta .author').text();
+  let author = ''; //$('.gh-header-meta .author').text();
 
   // Get participants
   let participantsText = '';

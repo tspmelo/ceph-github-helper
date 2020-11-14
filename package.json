@@ -1,6 +1,6 @@
 {
   "name": "ceph-github-helper",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "scripts": {
     "dev": "webextension-toolbox dev",
